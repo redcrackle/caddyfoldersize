@@ -31,7 +31,7 @@ func (fs *FolderSize) Provision(ctx caddy.Context) error {
 }
 
 // ServeHTTP handles the HTTP request.
-func (fs FolderSize) ServeHTTP(w http.ResponseWriter, r *http.Request) error {
+func (fs *FolderSize) ServeHTTP(w http.ResponseWriter, r *http.Request, next caddyhttp.Handler) error {
     folder := r.URL.Query().Get("folder")
     if folder == "" {
         http.Error(w, "folder parameter is required", http.StatusBadRequest)
