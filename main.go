@@ -50,7 +50,7 @@ func (fs *FolderSize) ServeHTTP(w http.ResponseWriter, r *http.Request, next cad
         "size":   size,
     })
 
-    return nil
+    return next.ServeHTTP(w, r)
 }
 
 func getFolderSize(path string) (int64, error) {
