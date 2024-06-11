@@ -67,19 +67,9 @@ func getFolderSize(path string) (int64, error) {
     return size, err
 }
 
-// Routes returns the routes handled by the FolderSize module.
-func (fs FolderSize) Routes(ctx caddy.Context) []caddy.Route {
-    return []caddy.Route{
-        {
-            Pattern: "/api/foldersize",
-            Handler: caddyhttp.HandlerFunc(fs.ServeHTTP),
-        },
-    }
-}
 
 // Interface guards
 var (
     _ caddy.Provisioner = (*FolderSize)(nil)
     _ caddyhttp.MiddlewareHandler = (*FolderSize)(nil)
-  //  _ caddy.AdminRouter     = (*FolderSize)(nil)
 )
