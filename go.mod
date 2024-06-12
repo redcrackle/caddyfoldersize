@@ -1,4 +1,4 @@
-module github.com/rsathishkumar/foldersize
+module github.com/redcrackle/caddyfoldersize
 
 go 1.22.3
 
