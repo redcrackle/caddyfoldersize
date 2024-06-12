@@ -1,4 +1,4 @@
-module github.com/rsathishkumar/caddyfoldersize
+module caddy
 
 go 1.22.3
 
